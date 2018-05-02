@@ -1,0 +1,31 @@
+What is GPIB stands for?
+	General Purpose Interface Bus - it was produced first by hp in 1965 and SCPI (Standard
+	Command for Programmable Instruments) took the command structures defined in IEEE 488.2
+	and created a single comprehensive programming command set that is used wih any SCPI.
+
+What does GPIB do?
+	GPIB devices communicate with other GPIB devices by sending device-dependant messages and interface
+	messages trough the interface system.
+
+Type of GPIB messages:
+	1.Device dependant messages
+		Often called "data" and contain device-specific information, such as programming instructions,
+		measurement results, machine status and data files.
+	2.Interface messages
+		these msges manage the bus. Usually called "commands", interfac emessages perform such functions
+		as initializing the bus, addressing and unaddressing devices, and setting modes for remote or local 
+		programming.
+
+GPIB can have 3 roles:
+	1. Controller:
+		The Controller monitors communications network(other GPIBs). When the controller notices that a device wants to send a data, it connects the Talker to the appropriate 
+		Listener. You can think of the controller role as a CPU in computer or a switching center of a city telephone system.
+		Mutiple controllers can be configured. but at any time only one CIC (Contorller in Charge) can exist. 
+
+	2. Talker:
+		Talker sends data messages to one or more Listeners, which receive the data.
+	3. Listener:
+		Listeners receives data from Talkers.
+
+NOTE: A computer with appropriate hardware/software can perfurm the roles of Talker/Listener/Controller.
+NOTE: Some GPIB configurations do not require a Controller. For example, a device that is always a Talker, called a talk-only device, is connected to one or more listen-only devices.
